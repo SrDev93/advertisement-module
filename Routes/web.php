@@ -11,7 +11,7 @@
 |
 */
 
-Route::prefix('advertisement')->group(function() {
+Route::prefix('advertisement')->middleware('auth')->group(function() {
     Route::resource('AdverCategory', 'AdvertisementCategoryController');
     Route::post('AdverCategory-sort', 'AdvertisementCategoryController@sort_item')->name('AdverCategory-sort');
     Route::resource('AdverProperty', 'AdvertisementPropertyController');

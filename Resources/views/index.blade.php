@@ -34,9 +34,7 @@
                                         <td>{{ $item->title }}</td>
                                         <td>@if($item->status == 0) <span class="badge bg-warning">در انتظار تایید</span> @elseif($item->status == 1) <span class="badge bg-success">تایید شده</span> @elseif($item->status == -1) <span class="badge bg-danger">رد شده @if($item->reason_reject) ( {{ $item->reason_reject }} ) @endif</span> @endif</td>
                                         <td>
-{{--                                            <a href="{{ route('AdverProperty.edit', $item->id) }}" class="btn btn-primary fs-14 text-white edit-icn" title="ویرایش">--}}
-{{--                                                <i class="fe fe-edit"></i>--}}
-{{--                                            </a>--}}
+                                            
                                             @if($item->status != 1)
                                                 <a href="{{ route('advertisement.confirm', $item->id) }}" class="btn btn-primary fs-14 text-white edit-icn" title="تایید">
                                                     <i class="fe fe-check"></i>
@@ -62,9 +60,7 @@
                             </table>
                         </div>
                     </div>
-{{--                    <div class="card-footer">--}}
-{{--                        <a href="{{ route('AdverProperty.create') }}" class="btn btn-primary">افزودن ویژگی</a>--}}
-{{--                    </div>--}}
+
                 </div>
             </div>
         </div>
